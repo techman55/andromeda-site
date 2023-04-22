@@ -1,6 +1,6 @@
 # Andromeda Homepage
 
-The offical product/download page for Andromeda Sketching Tool! See the application source code [here](https://github.com/darrinhaase/Andromeda) over at @darrinhaase 
+The offical product/download page for Andromeda Sketching Tool! See the application source code [here](https://github.com/darrinhaase/Andromeda) over at [@darrinhaase](https://github.com/darrinhaase)
 
 **Live Site at [andromeda.techman.dev](https://andromeda.techman.dev)**
 
