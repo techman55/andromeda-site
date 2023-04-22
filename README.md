@@ -7,7 +7,7 @@ The offical product/download page for Andromeda Sketching Tool! See the applicat
 
 ## Written in...
 
-Vite + React <br/>
+Vite + React + Tailwind <br/>
 Deployed on Cloudflare Pages
 
 ## How to run locally
