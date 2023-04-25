@@ -29,7 +29,7 @@ TxtType.prototype.tick = function() {
     this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
 
     var that = this;
-    var delta = 200 - Math.random() * 100;
+    var delta = 150 - Math.random() * 100;
 
     if (this.isDeleting) { delta /= 2; }
 
@@ -83,9 +83,25 @@ function App() {
             <Download/>
 
             <ContentArea
+                style={1}
                 image={wic}
                 header={"Why use Andromeda?"}
-                body={"Looking for a free and open source math sketching pad? Maybe you don't like the 17th century vibe that the alternatives give off. Well Andromeda is different. We designed Andromeda with the latest design ideas, and we're pretty sure you'll love it."}
+                body={<span>Looking for a free and open source math sketching pad?<br/>Maybe you don't like the 17th century vibe that the alternatives give off... <br/>Well Andromeda is different. We designed Andromeda with the latest design ideas, and we're pretty sure you'll love it.</span>}
+            />
+
+            <ContentArea
+                style={2}
+                image={wic}
+                header={"Features"}
+                body={<span>
+                    <span className={"font-bold"}>What Andromeda can do...</span>
+                    <ul>
+                        <li>⊙ Plot lines, squares, triangles, points, etc.</li>
+                        <li>⊙ Calculate areas, orthocenters, etc.</li>
+                        <li>⊙ Get detailed descriptions for each type of shape in the sidebar</li>
+                        <li>⊙ Display multiple units of measurements, like centimeters, inches, etc.</li>
+                    </ul>
+                </span>}
             />
 
 
