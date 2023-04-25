@@ -104,6 +104,12 @@ function App() {
                 </span>}
             />
 
+            <div className={"pb-40"}></div>
+
+            <footer className={"absolute bottom-0 bg-[#5243ac] p-10 w-full"}>
+                <p className={"font-thin text-xs"}>Brought to you by <a href={"https://jackhubbard.com"}>Jack Hubbard</a> and <a href={"https://github.com/darrinhaase"}>Darrin Haase</a>. © 2023</p>
+            </footer>
+
 
         </main>
     </div>
