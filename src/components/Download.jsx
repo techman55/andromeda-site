@@ -41,12 +41,17 @@ export default function Download(props) {
 
     useEffect( () => {
         if (!loading) {
-            if (showAllOSes) {
-                for (const OS of Object.keys(downloadUrl)) {
+            try {
+                if (showAllOSes) {
+                    for (const OS of Object.keys(downloadUrl)) {
+                        initTypewriter(OS)
+                    }
+                } else {
                     initTypewriter(OS)
                 }
-            } else {
-                initTypewriter(OS)
+            } catch (err) {
+                console.log(err)
+                setShowAllOSes(true)
             }
         }
     }, [showAllOSes, loading])
@@ -71,6 +76,9 @@ export default function Download(props) {
     }
 
     return <div className={"w-full flex flex-col justify-center place-items-center"}>
+
+        {!OS && <p className={"text-red-400 text-xs mb-4 p-6 font-bold"}>Your operating system could not be determined automatically.</p>}
+
         {!showAllOSes ?
 
         /*If only showing recommended os*/
