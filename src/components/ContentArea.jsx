@@ -7,7 +7,7 @@ export default function ContentArea(props) {
 
         <div className={"flex w-full md:w-2/5 flex-col justify-start"}>
 
-            <div className={"bg-gradient-to-r from-[#333333] to-[#5243ac] m-4 w-fit p-4 rounded-md border-2 border-[#5243ac] "}>
+            <div className={`bg-gradient-to-r ${style === 1 ? "md:bg-gradient-to-r" : "md:bg-gradient-to-l"} from-[#333333] to-[#5243ac] m-4 w-fit p-4 rounded-md border-2 border-[#5243ac] `}>
                 <p className={"font-bold body-text"}>{header}</p>
             </div>
 
@@ -27,7 +27,7 @@ export default function ContentArea(props) {
     ]
 
 
-    return <div className={`flex flex-row justify-evenly border-2 border-[#5243ac] rounded-xl from-[#333333] to-[#5243ac] p-6 m-5 mt-20 flex-wrap drop-shadow-xl ${style === 1 ? "bg-gradient-to-r" : "bg-gradient-to-l"}`}>
+    return <div className={`flex flex-row justify-evenly border-2 border-[#5243ac] rounded-xl from-[#333333] to-[#5243ac] p-6 m-5 mt-20 flex-wrap drop-shadow-xl bg-gradient-to-r ${style === 1 ? "md:bg-gradient-to-r" : "md:bg-gradient-to-l"}`}>
 
         {style === 1 ? <>{sections[0]}{sections[1]}</> : <>{sections[1]}{sections[0]}</>}
 
