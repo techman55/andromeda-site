@@ -2,6 +2,8 @@ import {useEffect, useState} from 'react'
 import './App.css'
 import Header from "./components/Header.jsx";
 import Download from "./components/Download.jsx";
+import ContentArea from "./components/ContentArea.jsx";
+import wic from './assets/wic.png'
 
 export let TxtType = function(el, toRotate, period) {
 
@@ -79,6 +81,12 @@ function App() {
         <main className={"relative bottom-[7rem] "}>
 
             <Download/>
+
+            <ContentArea
+                image={wic}
+                header={"Why use Andromeda?"}
+                body={"Looking for a free and open source math sketching pad? Maybe you don't like the 17th century vibe that the alternatives give off. Well Andromeda is different. We designed Andromeda with the latest design ideas, and we're pretty sure you'll love it."}
+            />
 
 
         </main>

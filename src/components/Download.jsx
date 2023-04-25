@@ -52,24 +52,42 @@ export default function Download(props) {
     }, [showAllOSes, loading])
 
     if (loading) {
-        return <>
-            <p>Loading...</p>
-        </>
+        return <div className={"w-full flex flex-col justify-center place-items-center"}>
+
+                <a className={"p-4 bg-gradient-to-r from-[#333333] to-[#5243ac] hover:ring-[#5243ac] hover:ring-2 drop-shadow-xl rounded-lg justify-center place-items-center transition-all duration-300   mb-4 w-[20em]"} >
+                    <div className={"flex w-full "}>
+                        <div className={"flex-1/4 flex justify-center w-1/4"}>
+                            <div className={"w-10"}></div>
+                        </div>
+                        <div className={"flex-row justify-center  flex-3/4 w-3/4"}>
+                            <div className={"flex flex-col"}>
+                                <p>loading...</p>
+                                <p className={"text-xs"}>latest: loading...</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+        </div>
     }
 
     return <div className={"w-full flex flex-col justify-center place-items-center"}>
         {!showAllOSes ?
 
         /*If only showing recommended os*/
-        <><a href={downloadUrl[OS]} download className={"p-4 bg-gradient-to-r from-[#333333] to-[#5243ac] hover:ring-[#5243ac] hover:ring-2 drop-shadow-xl rounded-lg transition-all duration-300 flex flex-row justify-center place-items-center mb-4 w-[20em]"} >
-            <img src={icons[OS]} alt="" className={"pr-4 w-10 "} style={{
-                filter: "invert(1)"
-            }}/>
-            <div className={"flex flex-col"}>
-                <p>Download for <span data-period="100000" data-type={`[ "${OS}" ]`} className={"typewrite text-lg "} id={OS}></span></p>
-                <p className={"text-xs"}>latest: {latestVersion}</p>
+        <><a href={downloadUrl[OS]} download className={"p-4 bg-gradient-to-r from-[#333333] to-[#5243ac] hover:ring-[#5243ac] hover:ring-2 drop-shadow-xl rounded-lg justify-center place-items-center transition-all duration-300   mb-4 w-[20em]"} >
+            <div className={"flex w-full "}>
+                <div className={"flex-1/4 flex justify-center w-1/4"}>
+                    <img src={icons[OS]} alt="" className={"pr-4 w-10 "} style={{
+                        filter: "invert(1)"
+                    }}/>
+                </div>
+                <div className={"flex-row justify-center  flex-3/4 w-3/4"}>
+                    <div className={"flex flex-col"}>
+                        <p>Download for <span data-period="100000" data-type={`[ "${OS}" ]`} className={"typewrite"} id={OS}></span></p>
+                        <p className={"text-xs"}>latest: {latestVersion}</p>
+                    </div>
+                </div>
             </div>
-
         </a>
         <a className={"text-xs text-left "} onClick={() => {setShowAllOSes(true)}}>Show All OSes</a>
         </>:
@@ -79,13 +97,19 @@ export default function Download(props) {
          <>
          {Object.keys(downloadUrl).map((OS) => {
 
-             return <a href={downloadUrl[OS]} download={"Andromeda.jpg"} className={"p-4 bg-gradient-to-r from-[#333333] to-[#5243ac] hover:ring-[#5243ac] hover:ring-2 drop-shadow-xl rounded-lg transition-all duration-300 flex flex-row justify-center place-items-center mb-4 w-[20em]"} >
-                 <img src={icons[OS]} alt="" className={"pr-4 w-10 "} style={{
-                     filter: "invert(1)"
-                 }}/>
-                 <div className={"flex flex-col"}>
-                     <p>Download for <span data-period="100000" data-type={`[ "${OS}" ]`} className={"typewrite text-lg "} id={OS}></span></p>
-                     <p className={"text-xs"}>latest: {latestVersion}</p>
+             return <a href={downloadUrl[OS]} download className={"p-4 bg-gradient-to-r from-[#333333] to-[#5243ac] hover:ring-[#5243ac] hover:ring-2 drop-shadow-xl rounded-lg justify-center place-items-center transition-all duration-300   mb-4 w-[20em]"} >
+                 <div className={"flex w-full "}>
+                     <div className={"flex-1/4 flex justify-center w-1/4"}>
+                         <img src={icons[OS]} alt="" className={"pr-4 w-10 "} style={{
+                             filter: "invert(1)"
+                         }}/>
+                     </div>
+                     <div className={"flex-row justify-center  flex-3/4 w-3/4"}>
+                         <div className={"flex flex-col"}>
+                             <p>Download for <span data-period="100000" data-type={`[ "${OS}" ]`} className={"typewrite"} id={OS}></span></p>
+                             <p className={"text-xs"}>latest: {latestVersion}</p>
+                         </div>
+                     </div>
                  </div>
              </a>
 
