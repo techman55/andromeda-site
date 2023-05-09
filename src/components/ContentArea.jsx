@@ -7,7 +7,7 @@ export default function ContentArea(props) {
 
         <div className={"flex w-full md:w-2/5 flex-col justify-start"}>
 
-            <div className={`bg-gradient-to-r ${style === 1 ? "md:bg-gradient-to-r" : "md:bg-gradient-to-l"} from-[#333333] to-[#5243ac] m-4 w-fit p-4 rounded-md border-2 border-[#5243ac] `}>
+            <div className={` m-4 w-max p-4 rounded-md border-2 border-[#5243ac] `}>
                 <p className={"font-bold body-text"}>{header}</p>
             </div>
 

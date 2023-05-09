@@ -3,7 +3,8 @@ import './App.css'
 import Header from "./components/Header.jsx";
 import Download from "./components/Download.jsx";
 import ContentArea from "./components/ContentArea.jsx";
-import wic from './assets/wic.png'
+import featuresPic from "./assets/features.png";
+import overviewPic from "./assets/overview.png";
 
 export let TxtType = function(el, toRotate, period) {
 
@@ -78,20 +79,20 @@ function App() {
 
     return <div className="">
         <Header/>
-        <main className={"relative bottom-[7rem] "}>
+        <main className={"relative bottom-[7rem] w-full"}>
 
             <Download/>
 
             <ContentArea
                 style={1}
-                image={wic}
+                image={overviewPic}
                 header={"Why use Andromeda?"}
                 body={<span>Looking for a free and open source math sketching pad?<br/>Maybe you don't like the 17th century vibe that the alternatives give off... <br/>Well Andromeda is different. We designed Andromeda with the latest design ideas, and we're pretty sure you'll love it.</span>}
             />
 
             <ContentArea
                 style={2}
-                image={wic}
+                image={featuresPic}
                 header={"Features"}
                 body={<span>
                     <span className={"font-bold"}>What Andromeda can do...</span>

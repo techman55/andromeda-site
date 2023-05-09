@@ -97,7 +97,7 @@ export default function Download(props) {
                 </div>
             </div>
         </a>
-        <a className={"text-xs text-left "} onClick={() => {setShowAllOSes(true)}}>Show All OSes</a>
+        <a className={"text-xs text-left hover:cursor-pointer"} onClick={() => {setShowAllOSes(true)}}>Show All OSes</a>
         </>:
 
         /*If showing all oses*/
@@ -123,7 +123,7 @@ export default function Download(props) {
 
          })}
 
-         <a className={"text-xs text-left "} onClick={() => setShowAllOSes(false)}>Show only my OS</a>
+         <a className={"text-xs text-left hover:cursor-pointer"} onClick={() => setShowAllOSes(false)}>Show only my OS</a>
          </>
         }
     </div>
