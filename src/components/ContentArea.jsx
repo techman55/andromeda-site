@@ -7,7 +7,7 @@ export default function ContentArea(props) {
 
         <div className={"flex w-full md:w-2/5 flex-col justify-start"}>
 
-            <div className={` m-4 w-max p-4 rounded-md border-2 border-[#5243ac] `}>
+            <div className={` m-4 w-max p-2 rounded-md border-2 border-[#33333] shadow-xl bg-[#333333] `}>
                 <p className={"font-bold body-text"}>{header}</p>
             </div>
 

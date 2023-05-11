@@ -6,9 +6,9 @@ import linuxIcon from "../assets/linux.svg";
 import {initTypewriter} from "../App.jsx";
 
 const icons = {
-    windows: windowsIcon,
-    macos: macosIcon,
-    linux: linuxIcon
+    Windows: windowsIcon,
+    macOS: macosIcon,
+    Linux: linuxIcon
 }
 
 export default function Download(props) {
