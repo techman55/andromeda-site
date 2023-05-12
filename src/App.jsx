@@ -98,7 +98,7 @@ function App() {
                     <span className={"font-bold"}>What Andromeda can do...</span>
                     <ul>
                         <li>⊙ Plot lines, squares, triangles, points, etc.</li>
-                        <li>⊙ Calculate areas, orthocenters, etc.</li>
+                        <li>⊙ Calculate areas, etc.</li>
                         <li>⊙ Get detailed descriptions for each type of shape in the sidebar</li>
                         <li>⊙ Display multiple units of measurements, like centimeters, inches, etc.</li>
                     </ul>

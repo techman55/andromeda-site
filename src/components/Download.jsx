@@ -25,7 +25,7 @@ export default function Download(props) {
 
     useEffect(() => {async function _() {
 
-        setOS("online"); //setOS(await osCheck());
+        await setOS(await osCheck());
 
         data.current = await fetch("https://f.techman.dev/d/andromeda/version.json")
         data.current = await data.current.json()
@@ -34,9 +34,13 @@ export default function Download(props) {
         console.log(versions)
 
         setLatestVersion(latest.release)
-        setDownloadUrl(versions[latest.release]["binary"])
-
+        await setDownloadUrl(versions[latest.release]["binary"])
         setActiveOSes([OS])
+
+        if (!Object.keys(versions[latest.release]["binary"]).includes(await osCheck())) {
+            setShowAllOSes(true)
+        }
+
 
 
     }; _().then(() => setLoading(false))}, [])
@@ -73,7 +77,7 @@ export default function Download(props) {
 
     return <div className={"w-full flex flex-col justify-center place-items-center"}>
 
-        {!OS && <p className={"text-red-400 text-xs mb-4 p-6 font-bold"}>Your operating system could not be determined automatically.</p>}
+        {!OS && <p className={"text-red-400 text-xs mb-4 p-6 font-bold"}>Your operating system doesn't support Andromeda at this time.</p>}
 
         {!showAllOSes ?
 
@@ -81,7 +85,7 @@ export default function Download(props) {
         <><a href={downloadUrl[OS].link} download className={"p-4 bg-gradient-to-r from-[#333333] to-[#5243ac] hover:ring-[#5243ac] hover:ring-2 drop-shadow-xl rounded-lg justify-center place-items-center transition-all duration-300   mb-4 w-[20em]"} >
             <div className={"flex w-full "}>
                 <div className={"flex-1/4 flex justify-center w-1/4"}>
-                    <img src={icons[OS]} alt="" className={"pr-4 w-10 "} style={{
+                    <img src={icons[OS.split(":")[0]]} alt="" className={"pr-4 w-10 "} style={{
                         filter: "invert(1)"
                     }}/>
                 </div>
@@ -104,7 +108,7 @@ export default function Download(props) {
              return <a href={downloadUrl[OS].link} download className={"p-4 bg-gradient-to-r from-[#333333] to-[#5243ac] hover:ring-[#5243ac] hover:ring-2 drop-shadow-xl rounded-lg justify-center place-items-center transition-all duration-300   mb-4 w-[20em]"} >
                  <div className={"flex w-full "}>
                      <div className={"flex-1/4 flex justify-center w-1/4"}>
-                         <img src={icons[OS]} alt="" className={"pr-4 w-10 "} style={{
+                         <img src={icons[OS.split(":")[0]]} alt="" className={"pr-4 w-10 "} style={{
                              filter: "invert(1)"
                          }}/>
                      </div>
