@@ -5,6 +5,7 @@ import Download from "./components/Download.jsx";
 import ContentArea from "./components/ContentArea.jsx";
 import featuresPic from "./assets/features.png";
 import overviewPic from "./assets/overview.png";
+import downloadPage from "./assets/downloadpage.png";
 
 export let TxtType = function(el, toRotate, period) {
 
@@ -83,14 +84,27 @@ function App() {
 
             <ContentArea
                 style={1}
-                image={overviewPic}
-                header={"How to open Andromeda online (recommended)..."}
+                image={downloadPage}
+                header={"How to install on your computer..."}
                 body={
 
                     <ol className={"list-decimal"}>
-                        <li>Go to the Andromeda homepage (<a href={"https://andromeda.jesuitnotes.com"} target={"_blank"}>andromeda.jesuitnotes.com</a>)</li>
-                        <li>Click the Open in Browser button. If you don't see this, click the "Show All OSes" button below.</li>
-                        <li>And, Voila! You now have Andromeda running in your browser.</li>
+                        <li>Go to the Andromeda homepage (andromeda.jesuitnotes.com)</li>
+                        <li>Your Operating System (macOS, Windows, etc) should be detected automatically. If you don't see your operating system, click the "Show All OSes" button below.</li>
+                        <li>Open the installer file downloaded to your computer, and follow the on-screen instructions.</li>
+                    </ol>
+            }
+            />
+
+            <ContentArea
+                style={1}
+                image={overviewPic}
+                header={"How to draw shapes..."}
+                body={
+
+                    <ol className={"list-decimal"}>
+                        <li>Open Andromeda</li>
+                        <li>In the menu bar at the top, click Tools, and then chose your desired shape tool.</li>
                     </ol>
 
                 }
@@ -99,46 +113,40 @@ function App() {
             <ContentArea
                 style={1}
                 image={featuresPic}
-                header={"How to install on your computer..."}
-                body={<span>
-
-                    <ol>
-                        <li>Go to the Andromeda homepage (andromeda.jesuitnotes.com)</li>
-                        <li>Your Operating System (macOS, Windows, etc) should be detected automatically. If you don't see your operating system, click the "Show All OSes" button below.</li>
-                        <li>Open the installer file downloaded to your computer, and follow the on-screen instructions.</li>
-                    </ol>
-
-                </span>}
-            />
-
-            <ContentArea
-                style={1}
-                image={featuresPic}
-                header={"How to draw shapes..."}
-                body={<span>
-
-                    <ol>
-                        <li>Open Andromeda</li>
-                        <li>In the menu bar at the top, click Tools, and then chose your desired shape tool.</li>
-                    </ol>
-
-                </span>}
-            />
-
-            <ContentArea
-                style={1}
-                image={featuresPic}
                 header={"How to save a file..."}
-                body={<span>
+                body={
 
-                    <ol>
+                    <ol className={"list-decimal"}>
                         <li>Go to the Andromeda homepage (andromeda.jesuitnotes.com)</li>
                         <li>Click the Open in Browser button. If you don't see this, click the "Show All OSes" button below.</li>
                         <li>And, Voila! You now have Andromeda running in your browser.</li>
                     </ol>
 
-                </span>}
+                }
             />
+
+            <div className={`flex flex-row justify-start border-2 border-[#5243ac] rounded-xl from-[#333333] to-[#341569] p-6 m-5 mt-20 flex-wrap drop-shadow-xl bg-gradient-to-r md:bg-gradient-to-r`}>
+                <div className={"flex w-full md:w-2/5 flex-col justify-start"}>
+
+                    <div className={"m-4"}>
+                        <div className={`w-max mb-4  border-b-2 pb-2`}>
+                            <p className={"font-bold body-text text-2xl"}>Merritt Info...</p>
+                        </div>
+
+                        <div className={"m-4"}>
+                            <p>Made possible by...</p>
+                            <p className={"ml-8"}>Jack Hubbard (slot 6)</p>
+                            <p className={"ml-8"}>Darrin Haase (slot 7)</p>
+                            <p>... in Ms Merritt's Geometry Honors class</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
 
 
         </main>
