@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pathway+Extreme:ital,wght@0,200;0,300;0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+    font-family: "Pathway Extreme", "Arial", sans-serif; /*'Rubik', "Arial", sans-serif;*/
+    color: white;
+}
+
+.body-text {
+    font-family: "Pathway Extreme", "Arial", sans-serif
+}
+
+
+
+
+.container {
+    max-height: 200px;
+
+    width: 50%;
+
+    overflow: auto;
+}
+
+.container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+.content {
+    height: 800px;
+}
+
+.container-dark {
+    background: #212121;
+}
+
+.container-dark:hover::-webkit-scrollbar-thumb {
+    background: #4A4A4A;
+}
+
+.container-light {
+    background: #fff;
+}
+
+.container-light:hover::-webkit-scrollbar-thumb {
+    background: #cfcfcf;
+}

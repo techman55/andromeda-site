@@ -3,14 +3,12 @@ import {osCheck} from "../utils/osCheck.js";
 import windowsIcon from "../assets/windows.svg";
 import macosIcon from "../assets/macos.svg";
 import linuxIcon from "../assets/linux.svg";
-import onlineIcon from "../assets/chrome.svg";
 import {initTypewriter} from "../App.jsx";
 
 const icons = {
     Windows: windowsIcon,
     macOS: macosIcon,
-    Linux: linuxIcon,
-    online: onlineIcon
+    Linux: linuxIcon
 }
 
 export default function Download(props) {
@@ -25,7 +23,7 @@ export default function Download(props) {
 
     useEffect(() => {async function _() {
 
-        setOS("online"); //setOS(await osCheck());
+        setOS(await osCheck());
 
         data.current = await fetch("https://f.techman.dev/d/andromeda/version.json")
         data.current = await data.current.json()
@@ -44,7 +42,13 @@ export default function Download(props) {
     useEffect( () => {
         if (!loading) {
             try {
-
+                if (showAllOSes) {
+                    for (const OS of Object.keys(downloadUrl)) {
+                        initTypewriter(OS)
+                    }
+                } else {
+                    initTypewriter(OS)
+                }
             } catch (err) {
                 console.log(err)
                 setShowAllOSes(true)
@@ -78,7 +82,7 @@ export default function Download(props) {
         {!showAllOSes ?
 
         /*If only showing recommended os*/
-        <><a href={downloadUrl[OS].link} download className={"p-4 bg-gradient-to-r from-[#333333] to-[#5243ac] hover:ring-[#5243ac] hover:ring-2 drop-shadow-xl rounded-lg justify-center place-items-center transition-all duration-300   mb-4 w-[20em]"} >
+        <><a href={downloadUrl[OS]} download className={"p-4 bg-gradient-to-r from-[#333333] to-[#5243ac] hover:ring-[#5243ac] hover:ring-2 drop-shadow-xl rounded-lg justify-center place-items-center transition-all duration-300   mb-4 w-[20em]"} >
             <div className={"flex w-full "}>
                 <div className={"flex-1/4 flex justify-center w-1/4"}>
                     <img src={icons[OS]} alt="" className={"pr-4 w-10 "} style={{
@@ -87,7 +91,7 @@ export default function Download(props) {
                 </div>
                 <div className={"flex-row justify-center  flex-3/4 w-3/4"}>
                     <div className={"flex flex-col"}>
-                        <p>{downloadUrl[OS].display}</p>
+                        <p>Download for <span data-period="100000" data-type={`[ "${OS}" ]`} className={"typewrite"} id={OS}></span></p>
                         <p className={"text-xs"}>latest: {latestVersion}</p>
                     </div>
                 </div>
@@ -101,7 +105,7 @@ export default function Download(props) {
          <>
          {Object.keys(downloadUrl).map((OS) => {
 
-             return <a href={downloadUrl[OS].link} download className={"p-4 bg-gradient-to-r from-[#333333] to-[#5243ac] hover:ring-[#5243ac] hover:ring-2 drop-shadow-xl rounded-lg justify-center place-items-center transition-all duration-300   mb-4 w-[20em]"} >
+             return <a href={downloadUrl[OS]} download className={"p-4 bg-gradient-to-r from-[#333333] to-[#5243ac] hover:ring-[#5243ac] hover:ring-2 drop-shadow-xl rounded-lg justify-center place-items-center transition-all duration-300   mb-4 w-[20em]"} >
                  <div className={"flex w-full "}>
                      <div className={"flex-1/4 flex justify-center w-1/4"}>
                          <img src={icons[OS]} alt="" className={"pr-4 w-10 "} style={{
@@ -110,7 +114,7 @@ export default function Download(props) {
                      </div>
                      <div className={"flex-row justify-center  flex-3/4 w-3/4"}>
                          <div className={"flex flex-col"}>
-                             <p>{downloadUrl[OS].display}</p>
+                             <p>Download for <span data-period="100000" data-type={`[ "${OS}" ]`} className={"typewrite"} id={OS}></span></p>
                              <p className={"text-xs"}>latest: {latestVersion}</p>
                          </div>
                      </div>
