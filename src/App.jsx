@@ -6,6 +6,8 @@ import ContentArea from "./components/ContentArea.jsx";
 import featuresPic from "./assets/features.png";
 import overviewPic from "./assets/overview.png";
 
+import Footer from "./components/footer.jsx";
+
 export let TxtType = function(el, toRotate, period) {
 
     this.toRotate = toRotate;
@@ -67,19 +69,9 @@ export function initTypewriter(id) {
 }
 
 function App() {
-
-
-    useEffect(() => {
-
-
-
-    }, [])
-
-
-
     return <div className="">
         <Header/>
-        <main className={"relative bottom-[7rem] w-full"}>
+        <main className={"relative w-full overflow-hidden"}>
 
             <Download/>
 
@@ -111,8 +103,9 @@ function App() {
                 <p className={"font-thin text-xs"}>Brought to you by <a href={"https://jackhubbard.com"}>Jack Hubbard</a> and <a href={"https://github.com/darrinhaase"}>Darrin Haase</a>. © 2023</p>
             </footer>
 
-
+            <Footer />
         </main>
+        
     </div>
 
 }
